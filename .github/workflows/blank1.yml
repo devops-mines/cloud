@@ -1,0 +1,19 @@
+# this is first file
+name: AWS Ec2 instance deploy
+
+on:
+
+  release: 
+        types: [created]
+    
+env:
+     aws_access_key_ID: ${{ secrets.aws_access_key }}
+     aws_secret_key_ID: ${{ secrets.aws_secrets_access_key }}
+Jobs:
+  Build:
+    EC2Instance: 
+        AvailabilityZone: us-east-1a
+        Image: ami-0d5eff06f840b45e9
+        InstanceType: t2.micro
+        VPC_SubnetId: vpc-eaf84c97
+       
